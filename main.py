@@ -2,6 +2,8 @@ from bottle import route, run, template, request, response, redirect, static_fil
 import requests as req
 import culqipy
 import uuid
+import sys
+import os
 #import pyodbc
 
 
@@ -34,5 +36,12 @@ def buy():
 def test():
     return 'test'
 
+   
+# run (host="192.168.0.2",port=8000,debug=True,reloader=True)
+if __name__ == '__main__':
+    if len(sys.argv) > 1 and sys.argv[1] == "local":
+        run(host="localhost", port=8000, debug=True, reloader=True)
+    else:
+        run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 
-run(host="localhost", port=8000, debug=True, reloader=True)
+#run(host="localhost", port=8000, debug=True, reloader=True)
