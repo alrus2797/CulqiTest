@@ -2,16 +2,16 @@ from bottle import route, run, template, request, response, redirect, static_fil
 import requests as req
 import culqipy
 import uuid
-import pyodbc
+#import pyodbc
 
 
 culqipy.public_key = 'pk_test_juKtZ4MFGEHRVGdl' 
 culqipy.secret_key = 'sk_test_qYNhzwh710OmVKcg'
 
-server_name = 'DESKTOP-0QOV6IS\SQLEXPRESS'
+#server_name = 'DESKTOP-0QOV6IS\SQLEXPRESS'
 
-cnxn = pyodbc.connect(driver='{SQL Server}', server=server_name, database='practice',               
-               trusted_connection='yes')
+#cnxn = pyodbc.connect(driver='{SQL Server}', server=server_name, database='practice',               
+#               trusted_connection='yes')
 
 @route('/')
 def index():
